@@ -15,6 +15,7 @@ Linux:
 Windows: 
 
 `set BOT_KEY='your key'`
+
 `spodlivoi_go_bot.exe`
 
 Build: 
