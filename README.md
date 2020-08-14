@@ -1,7 +1,13 @@
 # spodlivoibot
 
-First of all, create bot with [@BotFather](https://t.me/BotFather) and fill your values in main.go.  
-Move main.go in ~/go/src/spodlivoi_go_bot
+Bot API Key:
+First of all, create bot with [@BotFather](https://t.me/BotFather).  
+Next you have two way: 
+1. Fill your values in main.go
+2. Fill your values in command.
+Command example:
+`BOT_KEY='your key' go run github.com/Aryesia/spodlivoi_bot`
+`BOT_KEY='your key' ./spodlivoi_go_bot`
 
 Build: 
 1. `go get github.com/Aryesia/spodlivoi_bot`
