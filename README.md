@@ -10,11 +10,14 @@ Command example:
 `BOT_KEY='your key' ./spodlivoi_go_bot`
 
 Build: 
-1. `go get github.com/Aryesia/spodlivoi_bot`
-2. `go build github.com/Aryesia/spodlivoi_bot`  
-3. `go install github.com/Aryesia/spodlivoi_bot`  
-4. mv go/src/github.com/Aryesia/spodlivoi_go_bot to directory with DB and .txt files
-5. `./.../spodlivoi_go_bot` 
+1. `go get github.com/go-telegram-bot-api/telegram-bot-api`
+2. `go get github.com/mattn/go-sqlite3`
+3. `go get github.com/tidwall/gjson`
+4. `go get github.com/Aryesia/spodlivoi_bot`
+5. `go build github.com/Aryesia/spodlivoi_bot`  
+6. `go install github.com/Aryesia/spodlivoi_bot`  
+7. mv go/src/github.com/Aryesia/spodlivoi_go_bot to directory with DB and .txt files
+8. `./.../spodlivoi_go_bot` 
 
 Run:  
 `go run github.com/Aryesia/spodlivoi_bot`
