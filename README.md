@@ -1,15 +1,23 @@
 # spodlivoibot
 
 Bot API Key:
+
 First of all, create bot with [@BotFather](https://t.me/BotFather).  
 Next you have two way: 
 1. Fill your values in main.go
 2. Fill your values in command.
 Command example:
-`BOT_KEY='your key' go run github.com/Aryesia/spodlivoi_bot`
+
+Linux:
+
 `BOT_KEY='your key' ./spodlivoi_go_bot`
 
+Windows: 
+`set BOT_KEY='your key'`
+`spodlivoi_go_bot.exe`
+
 Build: 
+
 1. `go get github.com/go-telegram-bot-api/telegram-bot-api`
 2. `go get github.com/mattn/go-sqlite3`
 3. `go get github.com/tidwall/gjson`
@@ -20,6 +28,7 @@ Build:
 8. `./.../spodlivoi_go_bot` 
 
 Run:  
+
 `go run github.com/Aryesia/spodlivoi_bot`
 
 Demo: [@spodlivoi_bot](https://t.me/spodlivoi_bot)  
