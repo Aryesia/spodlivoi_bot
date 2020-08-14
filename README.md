@@ -9,6 +9,7 @@ Build:
 3. `go install github.com/Aryesia/spodlivoi_bot`  
 4. mv go/src/github.com/Aryesia/spodlivoi_go_bot to directory with DB and .txt files
 5. `./.../spodlivoi_go_bot` 
+
 Run:  
 `go run github.com/Aryesia/spodlivoi_bot`
 
