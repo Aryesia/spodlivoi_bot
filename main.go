@@ -22,22 +22,22 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-var botAPIKey = "" //paste your bot token here
+var botAPIKey = "866647031:AAFi2TEzTe8S_tZMiY8wyWzm95HQo-8Z2X8" //paste your bot token here
 
 var brepairText = "ЧИНИ "
 var repairText = strings.Repeat(brepairText, 1000)
 
 var stickerPacks = []string{"sosatlezhatsosat", "fightpics", "test228idinaxui", "davlyu", "gasiki2", "durkaebt", "daEntoOn", "Bodyafleks3"}
 
-var path, pathError = os.Executable()
+var path, pathError = os.Getwd()
 
 func main() {
 	if pathError != nil {
 		log.Panic(pathError)
 	}
-	if strings.Contains(path, "spodlivoi_go_bot") {
-		path = strings.ReplaceAll(path, "/spodlivoi_go_bot", "")
-	}
+	// if strings.Contains(path, "spodlivoi_go_bot") {
+	// 	path = strings.ReplaceAll(path, "/spodlivoi_go_bot", "")
+	// }
 	if botAPIKey == "" {
 		botAPIKey = os.Getenv("BOT_KEY")
 	}
@@ -49,6 +49,7 @@ func main() {
 
 	bot.Debug = false
 	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Current working directory %s", path)
 
 	db, err := sql.Open("sqlite3", path+"/db/spodlivoi.sqlite")
 	if err != nil {
