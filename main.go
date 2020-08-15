@@ -59,7 +59,7 @@ func main() {
 	u.Timeout = 60
 
 	updates, err := bot.GetUpdatesChan(u)
-	log.Printf("Bot is run")
+	log.Printf("Bot is running")
 	for update := range updates {
 		if update.Message == nil && update.EditedMessage == nil && update.InlineQuery == nil {
 			continue
