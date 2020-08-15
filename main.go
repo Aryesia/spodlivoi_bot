@@ -166,7 +166,7 @@ type Dicks struct {
 }
 
 func sendVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
-	dat, _ := ioutil.ReadFile(path + "/voice")
+	dat, _ := ioutil.ReadFile(path + "/db/voice")
 	datS := strings.ReplaceAll(string(dat), "\n", "")
 	if datS == "" {
 		sendMessageWithReply(update, bot, "Ты еблан? Голосовые добавь!")
