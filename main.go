@@ -192,7 +192,7 @@ func sendVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.Voice != nil {
 		voice := update.Message.ReplyToMessage.Voice
-		dat, _ := ioutil.ReadFile("voice")
+		dat, _ := ioutil.ReadFile("db/voice")
 		datS := strings.ReplaceAll(string(dat), "\n", "")
 		data := strings.Split(datS, ";")
 		item := stringInSlice(voice.FileID, data)
@@ -200,7 +200,7 @@ func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			sendMessageWithReply(update, bot, "Ты еблан? Нахуя мне повтор нужен?")
 			return
 		}
-		f, _ := os.OpenFile("voice", os.O_APPEND|os.O_WRONLY, 0644)
+		f, _ := os.OpenFile("db/voice", os.O_APPEND|os.O_WRONLY, 0644)
 		defer f.Close()
 		f.WriteString(voice.FileID + ";")
 		sendMessageWithReply(update, bot, "Добавлено!")
@@ -212,7 +212,7 @@ func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 func delVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.Voice != nil {
 		voice := update.Message.ReplyToMessage.Voice
-		dat, _ := ioutil.ReadFile("voice")
+		dat, _ := ioutil.ReadFile("db/voice")
 		datS := strings.ReplaceAll(string(dat), "\n", "")
 		if datS == "" {
 			sendMessageWithReply(update, bot, "Ты еблан? Голосовые добавь!")
@@ -229,7 +229,7 @@ func delVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			return
 		}
 		datS = strings.ReplaceAll(datS, voice.FileID+";", "")
-		f, _ := os.Create("voice")
+		f, _ := os.Create("db/voice")
 		w := bufio.NewWriter(f)
 		defer f.Close()
 		w.WriteString(datS)
