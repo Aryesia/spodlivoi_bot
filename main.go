@@ -49,7 +49,7 @@ func main() {
 	bot.Debug = false
 	log.Printf("Authorized on account %s", bot.Self.UserName)
 
-	db, err := sql.Open("sqlite3", path+"/spodlivoi.sqlite")
+	db, err := sql.Open("sqlite3", path+"/db/spodlivoi.sqlite")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -402,7 +402,7 @@ func stringInSlice(a string, list []string) int {
 }
 
 func getRandomCopypaste(name string) string {
-	dat, _ := ioutil.ReadFile(path + "/" + name + ".txt")
+	dat, _ := ioutil.ReadFile(path + "/res/" + name + ".txt")
 	data := strings.Split(string(dat), "|")
 	number := getRandomNumberInRange(0, len(data)-1)
 	return data[number]
