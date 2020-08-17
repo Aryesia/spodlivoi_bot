@@ -103,7 +103,9 @@ func main() {
 				break
 			}
 		} else if update.EditedMessage != nil {
-			sendMessageWithReply(update, bot, "Анус себе отредактируй!")
+			msg := tgbotapi.NewMessage(update.EditedMessage.Chat.ID, "Анус себе отредактируй!")
+			msg.ReplyToMessageID = update.EditedMessage.MessageID
+			bot.Send(msg)
 		} else if update.InlineQuery != nil {
 			log.Printf(update.InlineQuery.Query)
 			article1 := tgbotapi.NewInlineQueryResultArticleMarkdown("1", "Олды", getRandomCopypaste("olds"))
