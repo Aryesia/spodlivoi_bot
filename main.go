@@ -24,19 +24,20 @@ import (
 
 var botAPIKey = "" //paste your bot token here
 
-var repairText = "ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ ЧИНИ"
+var brepairText = "ЧИНИ "
+var repairText = strings.Repeat(brepairText, 1000)
 
 var stickerPacks = []string{"sosatlezhatsosat", "fightpics", "test228idinaxui", "davlyu", "gasiki2", "durkaebt", "daEntoOn", "Bodyafleks3"}
 
-var path, pathError = os.Executable()
+var path, pathError = os.Getwd()
 
 func main() {
 	if pathError != nil {
 		log.Panic(pathError)
 	}
-	if strings.Contains(path, "spodlivoi_go_bot") {
-		path = strings.ReplaceAll(path, "/spodlivoi_go_bot", "")
-	}
+	// if strings.Contains(path, "spodlivoi_go_bot") {
+	// 	path = strings.ReplaceAll(path, "/spodlivoi_go_bot", "")
+	// }
 	if botAPIKey == "" {
 		botAPIKey = os.Getenv("BOT_KEY")
 	}
@@ -48,8 +49,9 @@ func main() {
 
 	bot.Debug = false
 	log.Printf("Authorized on account %s", bot.Self.UserName)
+	log.Printf("Current working directory %s", path)
 
-	db, err := sql.Open("sqlite3", path+"/spodlivoi.sqlite")
+	db, err := sql.Open("sqlite3", path+"/db/spodlivoi.sqlite")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -59,7 +61,7 @@ func main() {
 	u.Timeout = 60
 
 	updates, err := bot.GetUpdatesChan(u)
-	log.Printf("Bot is run")
+	log.Printf("Bot is running")
 	for update := range updates {
 		if update.Message == nil && update.EditedMessage == nil && update.InlineQuery == nil {
 			continue
@@ -168,7 +170,7 @@ type Dicks struct {
 }
 
 func sendVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
-	dat, _ := ioutil.ReadFile(path + "/voice")
+	dat, _ := ioutil.ReadFile(path + "/db/voice")
 	datS := strings.ReplaceAll(string(dat), "\n", "")
 	if datS == "" {
 		sendMessageWithReply(update, bot, "Ты еблан? Голосовые добавь!")
@@ -194,7 +196,7 @@ func sendVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.Voice != nil {
 		voice := update.Message.ReplyToMessage.Voice
-		dat, _ := ioutil.ReadFile("voice")
+		dat, _ := ioutil.ReadFile("db/voice")
 		datS := strings.ReplaceAll(string(dat), "\n", "")
 		data := strings.Split(datS, ";")
 		item := stringInSlice(voice.FileID, data)
@@ -202,7 +204,7 @@ func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			sendMessageWithReply(update, bot, "Ты еблан? Нахуя мне повтор нужен?")
 			return
 		}
-		f, _ := os.OpenFile("voice", os.O_APPEND|os.O_WRONLY, 0644)
+		f, _ := os.OpenFile("db/voice", os.O_APPEND|os.O_WRONLY, 0644)
 		defer f.Close()
 		f.WriteString(voice.FileID + ";")
 		sendMessageWithReply(update, bot, "Добавлено!")
@@ -214,7 +216,7 @@ func addVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 func delVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.Voice != nil {
 		voice := update.Message.ReplyToMessage.Voice
-		dat, _ := ioutil.ReadFile("voice")
+		dat, _ := ioutil.ReadFile("db/voice")
 		datS := strings.ReplaceAll(string(dat), "\n", "")
 		if datS == "" {
 			sendMessageWithReply(update, bot, "Ты еблан? Голосовые добавь!")
@@ -231,7 +233,7 @@ func delVoice(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			return
 		}
 		datS = strings.ReplaceAll(datS, voice.FileID+";", "")
-		f, _ := os.Create("voice")
+		f, _ := os.Create("db/voice")
 		w := bufio.NewWriter(f)
 		defer f.Close()
 		w.WriteString(datS)
@@ -404,7 +406,7 @@ func stringInSlice(a string, list []string) int {
 }
 
 func getRandomCopypaste(name string) string {
-	dat, _ := ioutil.ReadFile(path + "/" + name + ".txt")
+	dat, _ := ioutil.ReadFile(path + "/res/" + name + ".txt")
 	data := strings.Split(string(dat), "|")
 	number := getRandomNumberInRange(0, len(data)-1)
 	return data[number]
