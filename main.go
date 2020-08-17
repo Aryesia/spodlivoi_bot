@@ -72,9 +72,6 @@ func main() {
 	updates, err := bot.GetUpdatesChan(u)
 	log.Printf("Bot is running")
 	for update := range updates {
-		if update.Message == nil && update.EditedMessage == nil && update.InlineQuery == nil {
-			continue
-		}
 		if update.Message != nil && update.Message.IsCommand() {
 			names := strings.Split(update.Message.Text, "@")
 			if len(names) > 1 && names[1] != bot.Self.UserName {
@@ -89,7 +86,7 @@ func main() {
 				rollDick(db, update, bot)
 				break
 			case "fight":
-				sendFightSticker(update, bot)
+				sendFightSticker(update, bot, false)
 				break
 			case "baby", "dota", "olds", "kolchan", "shizik":
 				sendRandomCopypaste(update.Message.Command(), update, bot)
@@ -111,6 +108,14 @@ func main() {
 				break
 			case "topdicks":
 				sendTopDicks(db, update, bot)
+				break
+			default:
+				sendFightSticker(update, bot, true)
+				break
+			}
+		} else if update.Message != nil {
+			if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.From.UserName == bot.Self.UserName {
+				sendFightSticker(update, bot, true)
 				break
 			}
 		} else if update.EditedMessage != nil {
@@ -511,13 +516,15 @@ func rollDick(db *sql.DB, update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	}
 }
 
-func sendFightSticker(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
+func sendFightSticker(update tgbotapi.Update, bot *tgbotapi.BotAPI, reply bool) {
 	number := getRandomNumberInRange(0, len(stickerPacks)-1)
 	set, _ := bot.GetStickerSet(tgbotapi.GetStickerSetConfig{Name: stickerPacks[number]})
 	number = getRandomNumberInRange(0, len(set.Stickers)-1)
 	sticker := set.Stickers[number]
 	msg := tgbotapi.NewStickerShare(update.Message.Chat.ID, sticker.FileID)
-	if update.Message.ReplyToMessage != nil {
+	if reply {
+		msg.ReplyToMessageID = update.Message.MessageID
+	} else if update.Message.ReplyToMessage != nil {
 		msg.ReplyToMessageID = update.Message.ReplyToMessage.MessageID
 		bot.Send(tgbotapi.NewDeleteMessage(update.Message.Chat.ID, update.Message.MessageID))
 	}
