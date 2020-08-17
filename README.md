@@ -3,7 +3,8 @@
 Bot API Key:
 
 First of all, create bot with [@BotFather](https://t.me/BotFather).  
-Next you have two way: 
+Next you have three way:
+ 
 1. Fill your values in main.go
 2. Fill your values in command.
 Command example:
@@ -17,6 +18,8 @@ Windows:
 `set BOT_KEY='your key'`
 
 `spodlivoi_go_bot.exe`
+
+3. Fill your values in command line args
 
 Build: 
 
