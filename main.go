@@ -39,7 +39,14 @@ func main() {
 	// 	path = strings.ReplaceAll(path, "/spodlivoi_go_bot", "")
 	// }
 	if botAPIKey == "" {
-		botAPIKey = os.Getenv("BOT_KEY")
+		if os.Getenv("BOT_KEY") != "" {
+			botAPIKey = os.Getenv("BOT_KEY")
+		} else if os.Args[1] != "" {
+			botAPIKey = os.Args[1]
+		} else {
+			log.Printf("API key missing!")
+			return
+		}
 	}
 
 	bot, err := tgbotapi.NewBotAPI(botAPIKey)
@@ -56,6 +63,8 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.Close()
+
+	dbCreate(db)
 
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 60
@@ -343,6 +352,14 @@ func getWebmURL() (string, error) {
 		return file, nil
 	}
 	return "", errors.New(string(resp.StatusCode))
+}
+
+func dbCreate(db *sql.DB) {
+	dat, _ := ioutil.ReadFile(path + "/db/podliva.sql")
+	_, err := db.Exec(string(dat))
+	if err != nil {
+		log.Printf("%v", err)
+	}
 }
 
 func sendRandomWebm(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
