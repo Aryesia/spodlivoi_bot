@@ -13,6 +13,7 @@ import (
 	"os"
 	"os/exec"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 
@@ -27,7 +28,22 @@ var botAPIKey = "" //paste your bot token here
 var brepairText = "ЧИНИ "
 var repairText = strings.Repeat(brepairText, 1000)
 
-var stickerPacks = []string{"sosatlezhatsosat", "fightpics", "test228idinaxui", "davlyu", "gasiki2", "durkaebt", "daEntoOn", "Bodyafleks3"}
+var stickerPacks = []string{
+	"sosatlezhatsosat",
+	"fightpics",
+	"test228idinaxui",
+	"davlyu",
+	"gasiki2",
+	"durkaebt",
+	"daEntoOn",
+	"Bodyafleks3",
+	"Rjaka228",
+	"Stickers_ebat",
+	"em_sho",
+	"vdyrky",
+	"onegaionegai",
+	"sp792a9133ad7d0b9144089d7350483d5c_by_stckrRobot",
+}
 
 var path, pathError = os.Getwd()
 
@@ -116,7 +132,6 @@ func main() {
 		} else if update.Message != nil {
 			if update.Message.ReplyToMessage != nil && update.Message.ReplyToMessage.From.UserName == bot.Self.UserName {
 				sendFightSticker(update, bot, true)
-				break
 			}
 		} else if update.EditedMessage != nil {
 			msg := tgbotapi.NewMessage(update.EditedMessage.Chat.ID, "Анус себе отредактируй!")
@@ -341,7 +356,6 @@ func getWebmURL() (string, error) {
 		if err != nil {
 			return "nil", err
 		}
-		log.Printf("https://2ch.hk/makaba/mobile.fcgi?task=get_thread&board=b&thread=" + threadNumber + "&post=0")
 		posts := gjson.Parse(string(bodyBytes)).Array()
 		file := ""
 		for file == "" {
@@ -375,36 +389,38 @@ func sendRandomWebm(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	}
 	if strings.Contains(video, ".webm") {
 		resp, _ := http.Get(video)
-		filename := string(getRandomNumberInRange(0, 1000000000))
+		filename := "bot_video" + strconv.Itoa(getRandomNumberInRange(0, 50000))
 		defer resp.Body.Close()
 		out, _ := os.Create("/tmp/" + filename + ".webm")
 		defer out.Close()
 		io.Copy(out, resp.Body)
-		err := exec.Command("ffmpeg", "-hide_banner -i /tmp/"+filename+".webm "+"-acodec copy -vcodec copy -strict -2 -f mp4 /tmp/"+filename+".mp4")
-		if err != nil {
-			log.Printf(err.String())
-			sendMessageWithReply(update, bot, "Произошёл пиздос")
-			return
-		}
 		video = "/tmp/" + filename + ".mp4"
+		cmd := exec.Command("ffmpeg", "-hide_banner", "-i", "/tmp/"+filename+".webm",
+			"-acodec", "copy", "-vcodec", "copy", "-strict", "-2", "-f", "mp4", video)
+		cmd.Run()
 		mes := tgbotapi.NewVideoUpload(update.Message.Chat.ID, video)
 		mes.ReplyToMessageID = update.Message.MessageID
-		_, errr := bot.Send(mes)
-		if errr != nil {
+		_, err := bot.Send(mes)
+		if err != nil {
 			sendMessageWithReply(update, bot, "Какой-то уебан закодировал видео в vp8...\nПодожди. Мне нужно немного времени, чтоб исправить это.")
-			exec.Command("rm -rf /tmp/" + filename + ".mp4")
-			exec.Command(
-				"ffmpeg -hide_banner -i /tmp/" + filename + ".webm " +
-					"-acodec copy -vcodec libx264 -strict -2 -f mp4 /tmp/" + filename + ".mp4")
-			if err != nil {
-				log.Printf(err.String())
-				sendMessageWithReply(update, bot, "Произошёл пиздос")
-				return
+			cmd := exec.Command("ffmpeg", "-hide_banner", "-i", "/tmp/"+filename+".webm",
+				"-acodec", "copy", "-vcodec", "libx264", "-strict", "-2", "-f", "mp4", video)
+			cmdErr := cmd.Run()
+			if cmdErr != nil {
+				log.Println(cmd)
+				log.Println(cmdErr)
 			}
 			mes := tgbotapi.NewVideoUpload(update.Message.Chat.ID, video)
 			mes.ReplyToMessageID = update.Message.MessageID
-			bot.Send(mes)
+			_, err := bot.Send(mes)
+			if err != nil {
+				sendMessageWithReply(update, bot, "Произошёл пиздос")
+			}
 		}
+		cmdDel := exec.Command("rm", "-rf", "/tmp/"+filename+".webm")
+		cmdDel.Run()
+		cmdDel = exec.Command("rm", "-rf", video)
+		cmdDel.Run()
 	} else {
 		mes := tgbotapi.NewVideoShare(update.Message.Chat.ID, video)
 		mes.ReplyToMessageID = update.Message.MessageID
