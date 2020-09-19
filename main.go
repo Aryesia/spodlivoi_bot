@@ -410,6 +410,7 @@ func sendRandomWebm(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			if cmdErr != nil {
 				log.Println(cmd)
 				log.Println(cmdErr)
+				sendMessageWithReply(update, bot, "Функция кодирования из vp8 временно не работает! Почему? Да хуй его знает!")
 			}
 			mes := tgbotapi.NewVideoUpload(update.Message.Chat.ID, video)
 			mes.ReplyToMessageID = update.Message.MessageID
