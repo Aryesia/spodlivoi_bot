@@ -405,6 +405,7 @@ func sendRandomWebm(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 			sendMessageWithReply(update, bot, "Какой-то уебан закодировал видео в vp8...\nПодожди. Мне нужно немного времени, чтоб исправить это.")
 			cmd := exec.Command("ffmpeg", "-hide_banner", "-i", "/tmp/"+filename+".webm",
 				"-acodec", "copy", "-vcodec", "libx264", "-strict", "-2", "-f", "mp4", video)
+			//TODO FIX THIS SHIT!!
 			cmdErr := cmd.Run()
 			if cmdErr != nil {
 				log.Println(cmd)
